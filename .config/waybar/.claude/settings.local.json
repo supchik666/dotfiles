@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout 2 waybar -c /home/paket/.config/waybar/config.jsonc -s /home/paket/.config/waybar/style.css)",
+      "Bash(echo \"exit:$?\")",
+      "Read(//home/paket/.config/hypr/**)",
+      "Bash(hyprctl reload *)",
+      "Bash(hyprctl configerrors *)",
+      "Bash(hyprctl version *)",
+      "Bash(find /usr/share /etc -iname \"*hypr*\" 2>/dev/null | grep -iv \"icon\\\\|man\" | head -30)",
+      "Read(//usr/share/**)",
+      "WebFetch(domain:wiki.hypr.land)",
+      "WebFetch(domain:wiki.hyprland.org)",
+      "WebSearch",
+      "WebFetch(domain:deepwiki.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(gh api *)",
+      "Bash(gh repo *)",
+      "Bash(curl -s \"https://api.github.com/search/code?q=layerrule+repo:hyprwm/hyprland-wiki\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/hyprwm/hyprland-wiki/main/pages/Configuring/Window-Rules.md\" -o /tmp/wr.md)",
+      "Read(//tmp/**)",
+      "Bash(curl -s \"https://api.github.com/repos/hyprwm/hyprland-wiki/contents/pages/Configuring\")"
+    ]
+  }
+}

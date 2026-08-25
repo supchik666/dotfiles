@@ -1,0 +1,168 @@
+@import "macchiato.css";
+
+/* Apple system-UI palette: near-white label text, a single blue accent for
+   focus/interaction, and the systemGreen/Red used for charging/critical states. */
+@define-color ios_text #f5f5f7;
+@define-color ios_gray #98989d;
+@define-color ios_blue #0a84ff;
+@define-color ios_green #32d74b;
+@define-color ios_red #ff453a;
+
+* {
+font-family: "JetBrains Mono", Roboto, Helvetica, Arial, sans-serif;
+font-size: 18px;
+}
+
+window#waybar {
+background-color: transparent;
+}
+
+button {
+/* Use box-shadow instead of border so the text isn't offset */
+box-shadow: inset 0 -3px transparent;
+/* Avoid rounded borders under each button name */
+border: none;
+border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+background: inherit;
+box-shadow: inset 0 -3px #ffffff;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+background-color: @surface2;
+}
+
+#workspaces button {
+padding: 0 5px;
+margin: 4px 2px;
+border-radius: 999px;
+background-color: transparent;
+color: @ios_text;
+transition-property: background-color, color, box-shadow, min-width, padding;
+transition-duration: 0.35s;
+transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#workspaces button:hover {
+background: rgba(255, 255, 255, 0.1);
+color: @ios_text;
+}
+
+#workspaces button.focused {
+background-color: @ios_blue;
+color: @ios_text;
+box-shadow:
+  0 0 14px rgba(10, 132, 255, 0.55),
+  inset 0 1px 0 rgba(255, 255, 255, 0.5);
+min-width: 26px;
+padding: 0 10px;
+}
+
+#workspaces button.urgent {
+background-color: @ios_red;
+}
+
+#mode {
+background-color: #64727d;
+box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#temperature,
+#network,
+#pulseaudio {
+padding: 0 10px;
+}
+
+#pulseaudio,
+#network,
+#temperature,
+#battery,
+#clock,
+#cpu,
+#memory,
+#window {
+color: @ios_text;
+}
+
+/* Liquid glass: translucent so the real desktop blur (Hyprland layerrule) shows
+   through, with a soft top-to-bottom gradient and a bright rim to catch light
+   like a glass edge. */
+.modules-center {
+background-color: rgba(36, 39, 58, 0.35);
+background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02) 40%, rgba(255, 255, 255, 0.05));
+border: 1px solid rgba(255, 255, 255, 0.22);
+border-radius: 999px;
+padding: 0 10px;
+margin-top: 2px;
+box-shadow:
+  0 8px 20px rgba(0, 0, 0, 0.35),
+  inset 0 1px 0 rgba(255, 255, 255, 0.35),
+  inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+transition-property: box-shadow, background-color;
+transition-duration: 0.3s;
+}
+
+.modules-center:hover {
+background-color: rgba(54, 58, 79, 0.4);
+box-shadow:
+  0 10px 26px rgba(0, 0, 0, 0.45),
+  inset 0 1px 0 rgba(255, 255, 255, 0.45),
+  inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Info cluster (volume, cpu, ram, wifi, clock, ...) as its own quieter glass pill. */
+.modules-right {
+background-color: rgba(36, 39, 58, 0.3);
+background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02) 40%, rgba(255, 255, 255, 0.04));
+border: 1px solid rgba(255, 255, 255, 0.18);
+border-radius: 999px;
+padding: 0 16px;
+margin-top: 2px;
+margin-right: 6px;
+box-shadow:
+  0 6px 14px rgba(0, 0, 0, 0.3),
+  inset 0 1px 0 rgba(255, 255, 255, 0.25),
+  inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+#battery.charging,
+#battery.plugged {
+color: @ios_green;
+}
+
+@keyframes blink {
+to {
+color: #000000;
+  }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+background-color: @ios_red;
+color: @ios_text;
+animation-name: blink;
+animation-duration: 0.5s;
+animation-timing-function: steps(12);
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+label:focus {
+background-color: #000000;
+}
+
+#pulseaudio.muted {
+color: @ios_gray;
+}
+#language {
+color: @ios_text;
+}
+
+#custom-exit {
+color: @ios_text;
+}
