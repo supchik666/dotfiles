@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XMLReg>
+  <Key Name="HKEY_CURRENT_USER">
+    <Key Name="Software">
+      <Key Name="Cheat Engine">
+        <Value Name="Init" Type="2">123</Value>
+        <Key Name="Hexview"/>
+        <Key Name="dotnetinfo"/>
+        <Key Name="MonoExtension">
+          <Value Name="EnableUsesMonoOptionOnAttach" Type="1">1</Value>
+        </Key>
+        <Key Name="VersionCheck"/>
+        <Value Name="First Time User" Type="1">0</Value>
+        <Key Name="Window Positions 96">
+          <Value Name="frmSelectionList Position" Type="2">6E010000D5020000D50100005C010000</Value>
+          <Value Name="frmLuaEngine Position" Type="2">1101000015020000AD030000DE030000C500000001000000010000000100000000000000</Value>
+          <Value Name="Comments Position" Type="2">9B010000180300004F01000001010000</Value>
+          <Value Name="AdvancedOptions Position" Type="2">380100001502000056030000C7010000</Value>
+          <Value Name="MainForm Position" Type="2">D10000003002000068070000DE03000028000000A0000000550000003C00000010270000FE01000036000000</Value>
+          <Value Name="frmLuaTableScript Position" Type="2">7F010000E8020000AF01000039010000</Value>
+          <Value Name="ProcessWindow Position" Type="2">DB000000F30200009901000094020000010000000000000000000000</Value>
+        </Key>
+        <Value Name="LuaEngine.showOnPrint" Type="1">1</Value>
+        <Key Name="Ignored Exceptions"/>
+        <Key Name="AITOOLS"/>
+      </Key>
+    </Key>
+    <Key Name="Cookies"/>
+  </Key>
+</XMLReg>

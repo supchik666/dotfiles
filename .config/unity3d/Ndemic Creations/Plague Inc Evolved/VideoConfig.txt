@@ -1,0 +1,11 @@
+videooptions:
+ window_width:1400
+ window_height:1050
+ window_mode:Fullscreen
+ msaa_level:AA_0
+ target_fps:FPS_144
+ anisotropic_filtering:Disable
+ v_sync:VSync_1
+ dynamic_effects:On
+ particle_effects:On
+ play_video:On

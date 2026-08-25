@@ -1,0 +1,36 @@
+# Optional renderer tuning. These defaults preserve the original behavior.
+# Values are loaded by the systemd service through EnvironmentFile.
+ORBIT_WALLPAPER_INTRO_DURATION=4.500
+ORBIT_WALLPAPER_EXIT_DURATION=1.000
+ORBIT_WALLPAPER_INTRO_PEAK_SPEED=34.000
+ORBIT_WALLPAPER_INTRO_PEAK_START=0.050
+ORBIT_WALLPAPER_INTRO_PEAK_END=0.080
+ORBIT_WALLPAPER_INTRO_REVEAL_END=0.220
+ORBIT_WALLPAPER_INTRO_DECAY=10.000
+ORBIT_WALLPAPER_PALETTE_STRENGTH=1.000
+ORBIT_WALLPAPER_SHADER=PS3_Home.frag
+
+# Fallback palette. These work without Orbit, Noctalia, or another palette source.
+ORBIT_WALLPAPER_PRIMARY=#7AA2F7
+ORBIT_WALLPAPER_SECONDARY=#BB9AF7
+ORBIT_WALLPAPER_SURFACE=#24283B
+ORBIT_WALLPAPER_ERROR=#F7768E
+
+# If enabled, a readable live palette overrides the fallback colours above.
+ORBIT_WALLPAPER_FOLLOW_SYSTEM_PALETTE=0
+
+# Optional explicit live palette source.
+# Set this to an absolute palette file path when using a live palette integration.
+# ORBIT_WALLPAPER_PALETTE_FILE=/absolute/path/to/palette.lua
+
+# Startup behaviour
+# Standalone default: play the intro automatically.
+ORBIT_WALLPAPER_SKIP_INTRO=0
+ORBIT_WALLPAPER_START_HIDDEN=0
+ORBIT_WALLPAPER_PEAK_BRIGHTNESS=1.000
+ORBIT_WALLPAPER_TARGET_FPS=60.0
+ORBIT_WALLPAPER_RENDER_SCALE=1.00
+ORBIT_WALLPAPER_SPEED=0.25
+ORBIT_WALLPAPER_RESOURCE_GOVERNOR=1
+ORBIT_WALLPAPER_GPU_PRESSURE_ENTER=75
+ORBIT_WALLPAPER_GPU_PRESSURE_EXIT=45

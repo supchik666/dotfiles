@@ -1,0 +1,8 @@
+[Added Associations]
+text/css=code-oss.desktop;vim.desktop;
+text/plain=code-oss.desktop;
+application/zip=org.kde.ark.desktop;org.kde.dolphin.desktop;
+application/vnd.appimage=wine.desktop;
+
+[Default Applications]
+application/vnd.appimage=wine.desktop
