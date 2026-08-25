@@ -1,0 +1,11 @@
+.config/chromium/
+.config/mozilla/
+.config/discord/
+.config/equibop/
+.config/Code - OSS/
+.config/eDEX-UI/
+.config/Proton/
+.config/pulse/
+.config/dconf/
+.config/session/
+.config/systemd/
